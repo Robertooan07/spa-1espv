@@ -1,35 +1,26 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Cabecalho from "./components/Cabecalho"
+import Conteudo from "./components/Conteudo"
+import Rodape from "./components/Rodape";
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App(){
+
+//Área declarativa, da pra declarar variaveis, funções, constantes, etc
 
   return (
-    <>
+    //Área de execução, área de ação, não declarar nada aqui.
+    <> 
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        {/* Este é um comentário do Jsx */}
+        
+        {/* Criar um cabeçalho com um header, um h1 e uma lista ul com 3 itens com links */}
+        <Cabecalho/>
+
+        {/* Criar um Seção de conteúdo com uma div e 2 parágrafos com 3 linhas de lorem.*/}
+        <Conteudo/>
+        
+        {/* Criar um rodapé com uma div uma lista ul e 3 itens com links para redes sociais, um parágrafo com texto : Todos os meus direitos reservadas. 2023, não se esqueça do código do símbolo do copyright.*/}
+        <Rodape/>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
-
-export default App
