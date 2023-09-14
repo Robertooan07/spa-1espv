@@ -1,6 +1,7 @@
-import Cabecalho from "./components/Cabecalho"
-import Conteudo from "./components/Conteudo"
+import Cabecalho from "./components/Cabecalho";
+import Conteudo from "./components/Conteudo";
 import Rodape from "./components/Rodape";
+import style from ".index.module.css";
 
 export default function App(){
 
@@ -9,8 +10,10 @@ export default function App(){
   return (
     //Área de execução, área de ação, não declarar nada aqui.
     <> 
-      <div>
+      <div className={style.conteiner}>
         {/* Este é um comentário do Jsx */}
+        
+        <h1>TESTE</h1>
         
         {/* Criar um cabeçalho com um header, um h1 e uma lista ul com 3 itens com links */}
         <Cabecalho/>
