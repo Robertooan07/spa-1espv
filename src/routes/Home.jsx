@@ -1,9 +1,12 @@
-import React from 'react'
 
 export default function Home() {
+
+  document.title = "HOME";
+
   return (
     <div>
-      Home - Página inicial
+      <h1>Home</h1>
     </div>
   )
 }
+
