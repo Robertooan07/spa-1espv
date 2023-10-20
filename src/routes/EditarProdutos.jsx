@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 export default function EditarProdutos() {
@@ -12,15 +12,20 @@ export default function EditarProdutos() {
       valor:""
     });
 
-    //http://localhost:5000/produtos/2
+    useEffect(() => {
+      
+      //http://localhost:5000/produtos/2
+  
+      //Realizando uma requisição para a API-JSON utilizando
+      // o id como parâmetro, para receber um único produto/objeto
+      //Para edição.
+      fetch(`http://localhost:5000/produtos/${id}`)
+      .then((response)=> response.json())
+      .then((response)=> setProduto(response))
+      .catch((error)=> console.error(error));
+    }, [id])
+    
 
-    //Realizando uma requisição para a API-JSON utilizando
-    // o id como parâmetro, para receber um único produto/objeto
-    //Para edição.
-    fetch(`http://localhost:5000/produtos/${id}`)
-    .then((response)=> response.json())
-    .then((response)=> setProduto(response))
-    .catch((error)=> console.error(error));
 
   return (
     <div>
